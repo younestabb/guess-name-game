@@ -1,0 +1,242 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-color: #eee;
+    text-align: center;
+}
+.guess-game {
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 60%;
+    align-items: flex-start;
+    justify-content: space-between;
+    .game-area {
+        width: 80%;
+        .inputs {
+             div {
+                > div {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-top: 20px;
+                    span {
+                        font-size: 25px;
+                        font-weight: bold;
+                        margin-right: 10px;
+                    }
+                    input {
+                        width: 60px;
+                        height: 60px;
+                        margin-left: 10px;
+                        border: none;
+                        background-color: white;
+                        border-bottom: 3px solid #959595;
+                        border-radius: 3px;
+                        caret-color: transparent;
+                        font-size: 50px;
+                        font-weight: bold;
+                        text-align: center;
+                        &:focus {
+                            outline: none;
+                        }
+                        &::selection {
+                            background-color: transparent;
+                        }
+                        &.correct-right-place {
+                            background-color: #12B882;
+                            border-color: #12B882;
+                            color: white;
+                        }
+                        
+                        &.correct-wrong-place {
+                            background-color: #F79C0C;
+                            color: white;
+                            border-color: #F79C0C;
+                        }
+                        
+                        &.wrong {
+                            background-color: #111828;
+                            color: white;
+                            border-color: #111828;
+                        }
+                    }
+                    @media (width < 769px) {
+                        input {
+                            width: 1.2em;
+                            height: 1.2em;
+                            font-size: 30px;
+                            padding: 5px;
+                        }
+                    }
+                    &.disabled {
+                        opacity: 0.5;
+                        pointer-events: none;
+                    }
+                }
+            }
+        }
+        .control {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            margin-top: 30px;
+            button {
+                border: none;
+                border-radius: 5px;
+                color: white;
+                padding: 7px 15px;
+                font-size: 15px;
+                font-weight: bold;
+                cursor: pointer;
+                &.check {
+                    background-color: #F34336;
+                    margin-right: 10px;
+                    flex: 1;
+                }
+                &.hint {
+                    background-color: #38a796;
+                }
+
+            }
+        }
+    }
+    .key-colors {
+        font-weight: bold;
+        font-size: 13px;
+        width: 100%;
+        .key-color {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            background-color: white;
+            padding: 5px 10px;
+            border-radius: 10px;
+            .color {
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                margin-right: 20px;
+                &.correct-right-place {
+                    background-color: #12B882;
+                }
+                &.correct-wrong-place {
+                    background-color: #F79C0C;
+                }
+                &.wrong {
+                    background-color: #111828;
+                }
+            }
+        }
+    }
+}
+
+:not(.disabled) input {
+    border: 2px solid red;
+}
+
+input:has(input::selection) {
+    background-color: red;
+}
+
+.alert {
+    color: #F34336;
+    font-size: 13px;
+    width: fit-content;
+    margin: 8px 10%;
+
+}
+
+.window {
+    width: 60%;
+    padding: 10px 15px;
+    color: white;
+    border-radius: 15px;
+    position: absolute;
+    top: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: top 0.5s;
+    height: 25vh;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    .successMessage {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 5%;
+        gap: 1em;
+
+        p {
+            font-size: 1em;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .congrats {
+            font-size: 1.2em;
+        }
+
+    }
+    .nextGuess {
+        border: none;
+        background-color: white;
+        border-radius: 20px;
+        width: 60%;
+        padding: 10px 15px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        color: #12B882;
+        font-size: 16px;
+        font-weight: bold;
+        margin: 5px auto 6%;
+        transition: margin 0.3s;
+        cursor: pointer;
+
+        &:hover {
+            margin-top: 0;
+        }
+    }
+&.hintWindow {
+    display: flex;
+    flex-direction: row;
+    font-weight: bold;
+    font-size: 0.8em;
+    height: fit-content;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #A3C9FF;
+    z-index: 100;
+    .close:hover {
+        cursor: pointer;
+    }
+}
+
+&.succesWindow {
+    background-color: #12B882;
+    }
+.nextGuess {
+    color: #12B882;
+}
+&.succesWindow {
+    background-color: #12B882;
+    .nextGuess {
+        color: #12B882;
+    }
+}
+&.failWindow {
+    background-color: #F34336;
+    .nextGuess {
+        color: #F34336;
+    }
+}
+
+}

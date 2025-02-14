@@ -1,0 +1,2 @@
+try "idris" as a current name
+type driss
