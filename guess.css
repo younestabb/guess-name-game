@@ -153,6 +153,7 @@ input:has(input::selection) {
 
 .window {
     width: 60%;
+    
     padding: 10px 15px;
     color: white;
     border-radius: 15px;
