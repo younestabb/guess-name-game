@@ -285,7 +285,7 @@ function handeleGuess () {
             failWindow.classList.add("failWindow");
             failWindow.innerHTML = `
             <div class="successMessage">
-                    <p>Your Guesses Are All Wrong, Good Luck Next Time</p>
+                    <p>Your Guesses Are All Wrong, The Name is "${currName}" Good Luck Next Time</p>
             </div>
             <button class="nextGuess">Retry <i class="fa-solid fa-rotate-right"></i></button>
             `;
