@@ -12,9 +12,21 @@ const names = [
     "Imad", "Zohir", "Lotfi", "Taher", "Aymen", "Rafik", "Wassim", "Anfel", "Maria", "Sabrina",
     "Bouchra", "Hadjer", "Asma", "Khadidja"
 ];
-// const names = [
-//     "Tahar", "Idris", "Hassan", "Bilal", "Merouane"
-// ];
+
+
+let succesTimes = document.querySelector(".succes .number");
+let failTimes = document.querySelector(".fail .number");
+
+let [succes_times, fail_times] = [0,0];
+
+if (sessionStorage.getItem("succes_times")) {
+    succesTimes.innerHTML = sessionStorage.getItem("succes_times");
+    succes_times = sessionStorage.getItem("succes_times");
+}
+if (sessionStorage.getItem("fail_times")) {
+    failTimes.innerHTML = sessionStorage.getItem("fail_times");
+    fail_times = sessionStorage.getItem("fail_times");
+}
 
 let [currName,lettersNums] = chosing_name ();
 function chosing_name () {
@@ -235,7 +247,8 @@ function handeleGuess () {
                 `;
         document.body.prepend(succesWindow);
         setTimeout(() => succesWindow.style.top = "9%", 10);
-
+        succes_times++;
+        succesTimes.innerHTML = succes_times;
         // start the next guess
         document.querySelector(".nextGuess").addEventListener("click", () => {
             succesWindow.style.top = "-50%";
@@ -243,6 +256,8 @@ function handeleGuess () {
             emptyig_inputs ();
             sessionStorage.clear();
             correctLetters.clear();
+            sessionStorage.setItem("succes_times", succes_times);
+            sessionStorage.setItem("fail_times", fail_times);
             inputGen();
             hintsNums = Math.floor(currName.length / 3);
             span.innerHTML = hintsNums;
@@ -276,6 +291,9 @@ function handeleGuess () {
             `;
             document.body.prepend(failWindow);
             setTimeout(() => failWindow.style.top = "9%", 10);
+            fail_times++;
+            failTimes.innerHTML = fail_times;
+            
 
             // start the next guess
             document.querySelector(".nextGuess").addEventListener("click", () => {
@@ -284,6 +302,8 @@ function handeleGuess () {
                 emptyig_inputs ();
                 sessionStorage.clear();
                 correctLetters.clear();
+                sessionStorage.setItem("succes_times", succes_times);
+                sessionStorage.setItem("fail_times", fail_times);
                 inputGen();
                 console.log(currName);
                 hintsNums = Math.floor(currName.length / 3);

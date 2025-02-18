@@ -7,6 +7,37 @@ body {
     background-color: #eee;
     text-align: center;
 }
+h1 {
+    margin-bottom: 50px;
+}
+.score {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    top: 65px;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 10px;
+    width: 6em;
+    color: white;
+    font-weight: bold;
+}
+.succes {
+    left: 30%;
+    background-color: #38a796;
+}
+.fail {
+    right: 30%;
+    background-color: #F34336;
+}
+@media (width < 769px) {
+    .succes {
+        left: 15%;
+    }
+    .fail {
+        right: 15%;
+    }
+}
 .guess-game {
     margin: 20px auto;
     display: flex;
