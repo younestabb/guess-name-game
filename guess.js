@@ -3,15 +3,16 @@ document.title = title;
 document.querySelector("h1").innerHTML = title;
 
 
-const names = [
-    "Younes", "Youcef", "Mounir", "Issam", "Anes", "Omar", "Adel", "Samir", "Hicham", "Khaled",
-    "Nabil", "Walid", "Riad", "Samy", "Karim", "Tarek", "Hakim", "Fares", 
-    "Bilal", "Fouad", "Mahdi", "Ramy", "Amine", "Djamal", "Merouane", "Nassim",
-    "Sofiane", "Hamza", "Mehdi", "Nassim", "Zaki", "Mustapha", "Salim",
-    "Ilyes", "Raouf","Toufik", "Rachid", "Idris", "Wail",
-    "Imad", "Zohir", "Lotfi", "Taher", "Aymen", "Rafik", "Wassim", "Anfel", "Maria", "Sabrina",
-    "Bouchra", "Hadjer", "Asma", "Khadidja"
-];
+//const names = [
+//    "Younes", "Youcef", "Mounir", "Issam", "Anes", "Omar", "Adel", "Samir", "Hicham", "Khaled",
+//    "Nabil", "Walid", "Riad", "Samy", "Karim", "Tarek", "Hakim", "Fares", 
+//    "Bilal", "Fouad", "Mahdi", "Ramy", "Amine", "Djamal", "Merouane", "Nassim",
+//    "Sofiane", "Hamza", "Mehdi", "Nassim", "Zaki", "Mustapha", "Salim",
+//    "Ilyes", "Raouf","Toufik", "Rachid", "Idris", "Wail",
+//   "Imad", "Zohir", "Lotfi", "Taher", "Aymen", "Rafik", "Wassim", "Anfel", "Maria", "Sabrina",
+//    "Bouchra", "Hadjer", "Asma", "Khadidja"
+//];
+const names = [ "anfel", "anfel", "anfel" ];
 
 
 let succesTimes = document.querySelector(".succes .number");
